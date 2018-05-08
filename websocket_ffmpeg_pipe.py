@@ -34,13 +34,13 @@ ws_url="192.168.2.132"
 #ws_url="10.16.37.97"
 ws_port=9080
 
-logger.info('Connecting websocket server...')
+#logger.info('Connecting websocket server...')
 websocket.enableTrace(True)
 ws_resource="ws://"+ws_url+ ":" + str(ws_port)
 #print ("Connecting websocket server: "+ ws_resource)
 ws = websocket.create_connection(ws_resource) #, subprotocols=["binary", "base64"])
 
-logger.info('Creating and opening audio.webm file...')
+#logger.info('Creating and opening audio.webm file...')
 #print ("Creating and opening audio.webm file...")
 #f = open('audio.webm', 'ab')
 
@@ -51,16 +51,16 @@ logger.info('Creating and opening audio.webm file...')
 #cmdline = ['mplayer', '-noconsolecontrols', '-ac', 'fflibopus', '-nocache', '-']
 #cmdline = ['mplayer', '-noconsolecontrols', '-nocache', '-']
 
-logger.info('Creating a subprocess...')
+#logger.info('Creating a subprocess...')
 
 cmdline = ['ffplay', 'mypipe']
-print (cmdline)
+#print (cmdline)
 player = subprocess.Popen(cmdline)
-logger.info("Player was opened in subprocess...")
+#logger.info("Player was opened in subprocess...")
 
-logger.info('Openning the pipe...')
+#logger.info('Openning the pipe...')
 fifo = open ('mypipe','wb')
-logger.info('Receiving data via websocket...')
+#logger.info('Receiving data via websocket...')
 
 while True:
     data = ws.recv()
