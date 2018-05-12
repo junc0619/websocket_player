@@ -1,5 +1,5 @@
 #import vlc
-import mplayer
+#import mplayer
 import subprocess
 # websocket-client package
 import websocket
